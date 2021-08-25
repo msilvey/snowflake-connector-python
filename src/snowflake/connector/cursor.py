@@ -55,7 +55,6 @@ from .errors import (
     NotSupportedError,
     ProgrammingError,
 )
-from .file_transfer_agent import SnowflakeFileTransferAgent
 from .file_transfer_agent_sdk import (
     SnowflakeFileTransferAgent as SnowflakeFileTransferAgentSdk,
 )
@@ -706,13 +705,7 @@ class SnowflakeCursor(object):
 
             logger.debug("PUT OR GET: %s", self.is_file_transfer)
             if self.is_file_transfer:
-                # Decide whether to use the old, or new code path
-                if self._connection._use_new_put_get:
-                    sf_file_transfer_agent_class = SnowflakeFileTransferAgent
-                else:
-                    sf_file_transfer_agent_class = SnowflakeFileTransferAgentSdk
-
-                sf_file_transfer_agent = sf_file_transfer_agent_class(
+                sf_file_transfer_agent = SnowflakeFileTransferAgentSdk(
                     self,
                     query,
                     ret,
