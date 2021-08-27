@@ -55,6 +55,7 @@ from .errors import (
     NotSupportedError,
     ProgrammingError,
 )
+from .file_transfer_agent import SnowflakeFileTransferAgent  # NOQA
 from .file_transfer_agent_sdk import (
     SnowflakeFileTransferAgent as SnowflakeFileTransferAgentSdk,
 )
