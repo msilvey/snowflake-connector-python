@@ -9,6 +9,18 @@ Source code is also available at: https://github.com/snowflakedb/snowflake-conne
 Release Notes
 -------------------------------------------------------------------------------
 
+- v2.6.1(August 30,2021)
+
+   - Disabling SDKless code path 
+
+
+- v2.6.0(August 29,2021)
+
+   - Internal change to the implementation of result fetching.
+   - Upgraded Pyarrow version from 3.0 to 5.0.
+   - Internal change to the implementation for PUT and GET. A new connection parameter use_new_put_get was added to toggle between implementations.
+   - Fixed a bug where executemany did not detect the type of data it was inserting.
+   - Updated the minimum Mac OSX build target from 10.13 to 10.14.
 
 - v2.5.1(July 31,2021)
 
