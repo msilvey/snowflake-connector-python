@@ -137,7 +137,10 @@ def pytest_runtest_setup(item) -> None:
 
 
 @pytest.fixture(
-    params=[pytest.param(True, marks=pytest.mark.skipolddriver), False],
+    params=[
+        pytest.param(True, marks=[pytest.mark.skipolddriver, pytest.mark.skip]),
+        False,
+    ],
     ids=["sdkless", "sdkfull"],
 )
 def sdkless(request):
