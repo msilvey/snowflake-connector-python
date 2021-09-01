@@ -125,6 +125,7 @@ class AuthByWebBrowser(AuthByPlugin):
                 logger.error(
                     "Unable to open a browser in this environment.", exc_info=True
                 )
+                print(sso_url)
                 self.handle_failure(
                     {
                         "code": ER_UNABLE_TO_OPEN_BROWSER,
