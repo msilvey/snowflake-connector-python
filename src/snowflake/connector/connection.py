@@ -737,9 +737,8 @@ class SnowflakeConnection(object):
             )
 
         if self._authenticator == USR_PWD_MFA_AUTHENTICATOR:
-            self._session_parameters[PARAMETER_CLIENT_REQUEST_MFA_TOKEN] = (
-                self._client_request_mfa_token if IS_LINUX else True
-            )
+            self._session_parameters[PARAMETER_CLIENT_REQUEST_MFA_TOKEN] = True
+
 
         auth = Auth(self.rest)
         auth.read_temporary_credentials(self.host, self.user, self._session_parameters)
